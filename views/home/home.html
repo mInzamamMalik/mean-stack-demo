@@ -1,1 +1,18 @@
-<h1>{{name}}</h1>
+<form ng-submit="getRand()">
+
+    <md-input-container>
+        <label>Range Min</label>
+        <input type="text" ng-model="min"/>
+    </md-input-container>
+
+    <md-input-container>
+        <label>Range Max</label>
+        <input type="text" ng-model="max"/>
+    </md-input-container>
+
+    <md-button ng-click="submit">Get Random number</md-button>
+
+</form>
+
+
+<p>{{result}}</p>
