@@ -1,9 +1,9 @@
 /**
  * Created by malikasinger on 11/28/2015.
  */
-angular.module("myApp",['ngMaterial','ui.router'])
+angular.module("myApp", ['ngMaterial', 'ui.router', 'ngMdIcons'])
 
-.config(function( $stateProvider, $urlRouterProvider){
+    .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 
         $urlRouterProvider.otherwise("/");
 
@@ -28,6 +28,18 @@ angular.module("myApp",['ngMaterial','ui.router'])
                 templateUrl : "views/login/login.html",
                 controller : "loginController"
             })
+            .state("signup", {
+                url: "/signup",
+                templateUrl: "views/signup/signup.html",
+                controller: "signupController"
+            });
 
+        // Configure a dark theme with primary foreground yellow
+        $mdThemingProvider.theme('docs-dark', 'default')
+            .primaryPalette('blue')
+            .dark();
+        $mdThemingProvider.theme('forms', 'default')
+            .primaryPalette('yellow')
+            .dark();
 
     });
