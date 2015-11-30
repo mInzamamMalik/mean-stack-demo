@@ -51,7 +51,7 @@ angular.module("myApp")
             $scope.showProgress = true;
 
             $scope.toggleActivation();
-            $http.get("http://localhost:3000/random/" + $scope.min + "/" + $scope.max)
+            $http.get("https://aqueous-journey-5974.herokuapp.com/random/" + $scope.min + "/" + $scope.max)
                 .then(
                 function (response) {
                     $scope.result = response;
