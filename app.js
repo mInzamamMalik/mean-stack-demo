@@ -9,22 +9,22 @@ angular.module("myApp",['ngMaterial','ui.router'])
 
 
         $stateProvider.state("home",{
-                Url : "/",
+                url : "/",
                 templateUrl : "views/home/home.html",
                 controller : "homeController"
             })
             .state("contact",{
-                Url : "/contact",
+                url : "/contact",
                 templateUrl : "views/contact/contact.html",
                 controller : "contactController"
             })
             .state("about",{
-                Url : "/contact",
+                url : "/contact",
                 templateUrl : "views/about/about.html",
                 controller : "aboutController"
             })
             .state("login",{
-                Url : "/login",
+                url : "/login",
                 templateUrl : "views/login/login.html",
                 controller : "loginController"
             })
