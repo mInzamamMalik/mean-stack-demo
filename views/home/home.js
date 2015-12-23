@@ -51,7 +51,7 @@ angular.module("myApp")
             $scope.showProgress = true;
 
             $scope.toggleActivation();
-            $http.get("https://inzi.herokuapp.com/random/" + $scope.min + "/" + $scope.max)
+            $http.get("https://inzi.herokuapp.com/random/v1/" + $scope.min + "/" + $scope.max)
                 .then(
                 function (response) {
                     $scope.result = response;
