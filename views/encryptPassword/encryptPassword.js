@@ -45,9 +45,9 @@ angular.module("myApp")
         ///////////////linear progress code end/////////////////
 
 
-
-        $scope.getRand = function () {
+        $scope.passwordToHash = function () {
             $scope.result = undefined;
+            $scope.showError = false;
 
             $scope.showProgress = true;
 
@@ -56,36 +56,78 @@ angular.module("myApp")
 
             $http({
                 method: "post",
-                url: "http://localhost:3000/encryptData",
+                url: "http://localhost:3000/encrypt-app/v1/passwordToHash",
+                //        url: "http://inzi.herokuapp.com/encrypt-app/v1/passwordToHash",
                 data: {
-                    dataToBeEncrypted: $scope.dataToBeEncrypted
+                    dataToBeEncrypted: $scope.dataToBeEncrypted,
+                    rounds: $scope.rounds
                 }
             }).then(
                 function (response) {
+                    console.log("response", response);
                     $scope.result = response;
                     setTimeout(function () {
                         $scope.showProgress = false;
                     }, 300);
 
                 },
-                function (response) {
+                function (err) {
 
-                    console.log(response);
+                    console.log("error", err);
 
-                    $scope.showError = true;
+                    $scope.showError = "unable to get response";
                     setTimeout(function () {
                         $scope.showProgress = false;
                     }, 300);
 
                     setTimeout(function () {
                         $scope.showError = false;
-                    }, 3000)
+                    }, 5000)
 
                 });
+        };
 
 
+        $scope.varifyHash = function () {
+            $scope.result = undefined;
+            $scope.showError = false;
+
+            $scope.showProgress = true;
+
+            $scope.toggleActivation();
 
 
+            $http({
+                method: "post",
+                url: "http://localhost:3000/encrypt-app/v1/passwordToHash",
+                //        url: "http://inzi.herokuapp.com/encrypt-app/v1/passwordToHash",
+                data: {
+                    dataToBeEncrypted: $scope.hash,
+                    rounds: $scope.realPassword
+                }
+            }).then(
+                function (response) {
+                    console.log("response", response);
+                    $scope.result = response;
+                    setTimeout(function () {
+                        $scope.showProgress = false;
+                    }, 300);
+
+                },
+                function (err) {
+
+                    console.log("error", err);
+
+                    $scope.showError = "unable to get response";
+                    setTimeout(function () {
+                        $scope.showProgress = false;
+                    }, 300);
+
+                    setTimeout(function () {
+                        $scope.showError = false;
+                    }, 5000)
+
+                });
         };
 
 

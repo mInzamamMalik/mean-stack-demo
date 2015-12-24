@@ -60,9 +60,9 @@ angular.module("myApp")
                     }, 300);
 
                 },
-                function (response) {
+                    function (err) {
 
-                    console.log(response);
+                        console.log(err);
 
                     $scope.showError = true;
                     setTimeout(function () {

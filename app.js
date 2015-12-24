@@ -1,7 +1,7 @@
 /**
  * Created by malikasinger on 11/28/2015.
  */
-angular.module("myApp", ['ngMaterial', 'ui.router', 'ngMdIcons'])
+angular.module("myApp", ['ngMaterial', 'ui.router', 'ngMdIcons', 'ngclipboard'])
 
     .config(function ($stateProvider, $urlRouterProvider, $mdThemingProvider) {
 

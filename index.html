@@ -28,6 +28,9 @@
 
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="css/angular-material-icons.min.js"></script>
+
+    <script src="bower_components/ngclipboard/dist/ngclipboard.min.js"></script>
+
     <script src="app.js"></script>
 
     <script src="views/home/home.js"></script>
@@ -55,7 +58,7 @@
     <md-toolbar class="md-active">
         <div class="md-toolbar-tools">
 
-            <h1>A Web Page Powered By ExpressJS </h1>
+            <span class="md-body-2">A Web Page Powered By ExpressJS </span>
             <span flex></span>
             <md-button md-theme="default" class="md-button md-primary md-raised " ui-sref="home">Random Number</md-button>
             <md-button md-theme="default" class="md-button md-primary md-raised " ui-sref="encryptPassword">Encrypt Password</md-button>
@@ -67,7 +70,7 @@
     </md-toolbar>
 
 
-    <div ui-view></div>
+    <div ui-view class=" md-padding"></div>
 
 </md-content>
 <br/>
