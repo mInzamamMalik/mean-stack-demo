@@ -56,8 +56,8 @@ angular.module("myApp")
 
             $http({
                 method: "post",
-                url: "http://localhost:3000/encrypt-app/v1/passwordToHash",
-                //        url: "http://inzi.herokuapp.com/encrypt-app/v1/passwordToHash",
+                //url: "http://localhost:3000/encrypt-app/v1/passwordToHash",
+                url: "http://inzi.herokuapp.com/encrypt-app/v1/passwordToHash",
                 data: {
                     dataToBeEncrypted: $scope.dataToBeEncrypted,
                     rounds: $scope.rounds
@@ -99,11 +99,11 @@ angular.module("myApp")
 
             $http({
                 method: "post",
-                url: "http://localhost:3000/encrypt-app/v1/passwordToHash",
-                //        url: "http://inzi.herokuapp.com/encrypt-app/v1/passwordToHash",
+                url: "http://localhost:3000/encrypt-app/v1/varifyHash",
+                //url: "http://inzi.herokuapp.com/encrypt-app/v1/varifyHash",
                 data: {
-                    dataToBeEncrypted: $scope.hash,
-                    rounds: $scope.realPassword
+                    hashedPassword: $scope.hashedPassword,
+                    realPassword: $scope.realPassword
                 }
             }).then(
                 function (response) {
@@ -112,24 +112,16 @@ angular.module("myApp")
                     setTimeout(function () {
                         $scope.showProgress = false;
                     }, 300);
-
                 },
                 function (err) {
-
                     console.log("error", err);
-
-                    $scope.showError = "unable to get response";
+                    $scope.result = {data: {res: ""}}; // i don't know why i need this
+                    $scope.result.data.res = "unable to get response, Check internet connection";
                     setTimeout(function () {
                         $scope.showProgress = false;
                     }, 300);
-
-                    setTimeout(function () {
-                        $scope.showError = false;
-                    }, 5000)
-
                 });
         };
 
-
-
+    
     });
