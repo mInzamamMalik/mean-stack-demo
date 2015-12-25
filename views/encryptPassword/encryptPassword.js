@@ -99,8 +99,8 @@ angular.module("myApp")
 
             $http({
                 method: "post",
-                url: "http://localhost:3000/encrypt-app/v1/varifyHash",
-                //url: "http://inzi.herokuapp.com/encrypt-app/v1/varifyHash",
+                //url: "http://localhost:3000/encrypt-app/v1/varifyHash",
+                url: "http://inzi.herokuapp.com/encrypt-app/v1/varifyHash",
                 data: {
                     hashedPassword: $scope.hashedPassword,
                     realPassword: $scope.realPassword
@@ -123,5 +123,5 @@ angular.module("myApp")
                 });
         };
 
-    
+
     });
