@@ -1,28 +1,31 @@
-<md-content ng-show="loginFormShow">
+    <md-content ng-show="loginFormShow">
 
-    <md-content layout-padding md-theme="forms" layout-sm="column">
-        <h1 class="md-headline">Login:</h1>
+        <md-content layout-padding md-theme="forms" layout-sm="column">
+            <h1 class="md-headline">Login:</h1>
+            <form ng-submit="doLogin()">
 
-        <md-input-container flex="40">
-            <label>Username</label>
-            <input ng-model="loginInfo.username">
-        </md-input-container>
-        <md-input-container flex="40">
-            <label>Password</label>
-            <input ng-model="loginInfo.password" type="password">
-        </md-input-container>
+            <md-input-container flex="40">
+                <label>Username</label>
+                <input ng-model="loginInfo.username" type="text" required>
+            </md-input-container>
+            <md-input-container flex="40">
+                <label>Password</label>
+                <input ng-model="loginInfo.password" type="password" required>
+            </md-input-container>
 
-        <md-content layout="row" layout-sm="column" flex="40">
+            <md-content layout="row" layout-sm="column" flex="40">
 
-            <md-button md-theme="default" class="md-primary md-raised" flex>Login</md-button>
-            <div flex></div>
-            <div class="md-display-1 thin" flex>or</div>
-            <div flex></div>
-            <md-button flex ng-click="toggleSignupLoginFormShow();">Signup</md-button>
+                <md-button ng-click="submit" md-theme="default" class="md-primary md-raised" flex>Login</md-button>
+            </form>
+                <div flex></div>
+                <div class="md-display-1 thin" flex>or</div>
+                <div flex></div>
+                <div class="md-button button-positive" flex ng-click="toggleSignupLoginFormShow();">Signup</div>
+            </md-content>
         </md-content>
+
     </md-content>
 
-</md-content>
 
 
 
@@ -57,11 +60,11 @@
             </md-input-container>
             <md-input-container flex="40">
                 <label>Email</label>
-                <input ng-model="signupInfo.email" type="email" ng-change="validateEmail()">
+                <input ng-model="signupInfo.email" type="email">
             </md-input-container>
 
             <md-content layout="row" layout-sm="column" flex="40">
-                <md-button flex ng-click="toggleSignupLoginFormShow()">Login</md-button>
+                <div class="md-button button-positive" flex ng-click="toggleSignupLoginFormShow()">Login</div>
                 <div flex></div>
                 <div class="md-display-1 thin" flex>or</div>
                 <div flex></div>
