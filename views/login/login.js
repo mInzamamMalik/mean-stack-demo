@@ -23,8 +23,8 @@ angular.module("myApp")
 
             $http({
                 method : "post",
-                url : "http://localhost:3000/teacher-student-app/v1/signup",
-                //url: "http://inzi.herokuapp.com/teacher-student-app/v1/signup",
+                //url : "http://localhost:3000/teacher-student-app/v1/signup",
+                url: "http://inzi.herokuapp.com/teacher-student-app/v1/signup",
                 data :  {signupInfo : $scope.signupInfo}
 
             }).then(function(err,res){
