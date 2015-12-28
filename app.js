@@ -46,5 +46,8 @@ angular.module("myApp", ['ngMaterial', 'ui.router', 'ngMdIcons', 'ngclipboard'])
         $mdThemingProvider.theme('forms', 'default')
             .primaryPalette('yellow')
             .dark();
+        $mdThemingProvider.theme('tabs', 'default')
+            .primaryPalette('yellow')
+            .dark();
 
     });
