@@ -57,7 +57,7 @@
             </md-input-container>
             <md-input-container flex="40">
                 <label>Email</label>
-                <input ng-model="signupInfo.email" type="email">
+                <input ng-model="signupInfo.email" type="email" ng-change="validateEmail()">
             </md-input-container>
 
             <md-content layout="row" layout-sm="column" flex="40">
