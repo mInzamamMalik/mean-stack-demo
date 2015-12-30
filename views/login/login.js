@@ -59,7 +59,13 @@ angular.module("myApp")
                 //url: "http://inzi.herokuapp.com/teacher-student-app/v1/signup",
                 data :  {loginInfo : $scope.loginInfo}
 
-            }).then(function(err,res){
+            }).then(function(res,err){
+                if(res){
+                    console("res: ",res);
+                }
+                if(err){
+                    console.log("err: " , err);
+                }
 
             });
 
